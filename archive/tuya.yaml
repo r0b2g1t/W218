@@ -1,0 +1,46 @@
+esphome:
+  name: piscina-sniffer
+
+esp32:
+  board: esp32-c3-devkitm-1
+  variant: esp32c3
+  framework:
+    type: arduino
+
+wifi:
+  ssid: "ELIGHT"
+  password: "universo"
+  ap:
+    ssid: "Piscina-Sniffer Fallback"
+
+api:
+
+ota:
+  - platform: esphome
+
+logger:
+  level: DEBUG
+  hardware_uart: USB_SERIAL_JTAG
+
+uart:
+  - id: uart_mcu
+    rx_pin: GPIO20
+    baud_rate: 9600
+  - id: uart_wb3s
+    rx_pin: GPIO21
+    baud_rate: 9600
+
+interval:
+  - interval: 100ms
+    then:
+      - lambda: |-
+          while (id(uart_mcu).available()) {
+            uint8_t b;
+            id(uart_mcu).read_byte(&b);
+            ESP_LOGD("MCU->WB3S", "%02X", b);
+          }
+          while (id(uart_wb3s).available()) {
+            uint8_t b;
+            id(uart_wb3s).read_byte(&b);
+            ESP_LOGD("WB3S->MCU", "%02X", b);
+          }

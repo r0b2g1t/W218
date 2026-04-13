@@ -1,0 +1,2616 @@
+Device Listing
+
+[
+    {
+        "name": "LAB Piscina",
+        "id": "ebe8afbca7312c740cao3l",
+        "key": "ra;/9tl5SALdTh_>",
+        "mac": "d8:d6:68:41:74:31",
+        "uuid": "d4aa514f78ba251a",
+        "sn": "100132480003C3",
+        "category": "dgnbj",
+        "product_name": "WiFi smart online 8 in 1 tester",
+        "product_id": "layxxij0sdbrfmrf",
+        "biz_type": 0,
+        "model": "",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/bay1620787138798I6P6/5fcbef251f475d1d19ca05f97ebaf54f.png",
+        "mapping": {
+            "8": {
+                "code": "temp_current",
+                "type": "Integer",
+                "values": {
+                    "unit": "\u00b0C",
+                    "min": -100,
+                    "max": 1100,
+                    "scale": 1,
+                    "step": 1
+                }
+            }
+        }
+    },
+    {
+        "name": "Sensor caixas d'\u00e1gua",
+        "id": "eb711b3b63885be592yb2y",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:79:cf:d3:ed:17",
+        "uuid": "a4c13879cfd3ed17",
+        "sn": "100137718001D9",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c13879cfd3ed17",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Alarme",
+        "id": "ebb5a55ab140243cc0snwi",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:db:7c:cf:57:4b",
+        "uuid": "a4c138db7ccf574b",
+        "category": "sgbj",
+        "product_name": "Audible alarm",
+        "product_id": "t1blo2bj",
+        "biz_type": 0,
+        "model": "NAS-AB02B2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1503986080106Gppjy/06b2b697b5c9e32e5cffd9dc5021b7d4.png",
+        "node_id": "a4c138db7ccf574b",
+        "mapping": {
+            "5": {
+                "code": "alarm_volume",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "low",
+                        "middle",
+                        "high"
+                    ]
+                }
+            },
+            "7": {
+                "code": "alarm_time",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 1800,
+                    "scale": 0,
+                    "step": 10
+                }
+            },
+            "13": {
+                "code": "alarm_switch",
+                "type": "Boolean",
+                "values": {}
+            },
+            "15": {
+                "code": "battery_percentage",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Bombas 1\u00b0 e 2\u00b0 andar",
+        "id": "eb903bea5079b85107ba0s",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:ed:c8:5b:a6:5d",
+        "uuid": "a4c138edc85ba65d",
+        "sn": "10013771800295",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c138edc85ba65d",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Zigbee Wired Gateway",
+        "id": "eb94c1f9398e0dd2c1hsxs",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "18:de:50:00:b0:38",
+        "uuid": "f039ef15cb6c2f04",
+        "category": "wg2",
+        "product_name": "Zigbee Wired Gateway",
+        "product_id": "6fxrl2aflzf0ttga",
+        "biz_type": 0,
+        "model": "GW16-Wired",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/05077223fa53f8ac37425517ab99498a.jpg",
+        "mapping": {}
+    },
+    {
+        "name": "Energia",
+        "id": "eb9353275d8671d01ee99h",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:16:b7:c3:ba:c4",
+        "uuid": "a4c13816b7c3bac4",
+        "sn": "10014961700222",
+        "category": "zndb",
+        "product_name": "Zigbee Dual Meter",
+        "product_id": "81yrt3lo",
+        "biz_type": 0,
+        "model": "PJ1203A",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay16111967609110m8U/655d51e422f0b3a88002d9dd478b0b49.png",
+        "node_id": "a4c13816b7c3bac4",
+        "mapping": {
+            "1": {
+                "code": "forward_energy_total",
+                "type": "Integer",
+                "values": {
+                    "unit": "kW\u00b7h",
+                    "min": 0,
+                    "max": 99999999,
+                    "scale": 2,
+                    "step": 1
+                }
+            },
+            "2": {
+                "code": "reverse_energy_total",
+                "type": "Integer",
+                "values": {
+                    "unit": "kW\u00b7h",
+                    "min": 0,
+                    "max": 99999999,
+                    "scale": 2,
+                    "step": 1
+                }
+            },
+            "3": {
+                "code": "energy_month",
+                "type": "Json",
+                "raw_values": "{}",
+                "values": {}
+            },
+            "4": {
+                "code": "energy_daily",
+                "type": "Json",
+                "raw_values": "{}",
+                "values": {}
+            },
+            "6": {
+                "code": "phase_a",
+                "type": "Json",
+                "raw_values": "{}",
+                "values": {}
+            },
+            "7": {
+                "code": "phase_b",
+                "type": "Json",
+                "raw_values": "{}",
+                "values": {}
+            },
+            "115": {
+                "code": "total_power",
+                "type": "Integer",
+                "values": {
+                    "unit": "W",
+                    "min": -99999999,
+                    "max": 99999999,
+                    "scale": 1,
+                    "step": 1
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Monitor C\u00e2meras",
+        "id": "eb513e920a51c5febdwe8t",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:59:81:c1:1f:6b",
+        "uuid": "a4c1385981c11f6b",
+        "sn": "10017659900010",
+        "category": "cz",
+        "product_name": "Zigbee Smart Socket-16A",
+        "product_id": "88iqnhvd",
+        "biz_type": 0,
+        "model": "ZOT12-16A",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/68bb3dbeaf7e15ee7d613f52b08fc200.png",
+        "node_id": "a4c1385981c11f6b",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "9": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "17": {
+                "code": "add_ele",
+                "type": "Integer",
+                "values": {
+                    "unit": "kwh",
+                    "min": 0,
+                    "max": 100000000,
+                    "scale": 3,
+                    "step": 100
+                }
+            },
+            "18": {
+                "code": "cur_current",
+                "type": "Integer",
+                "values": {
+                    "unit": "mA",
+                    "min": 0,
+                    "max": 30000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "19": {
+                "code": "cur_power",
+                "type": "Integer",
+                "values": {
+                    "unit": "W",
+                    "min": 0,
+                    "max": 50000,
+                    "scale": 1,
+                    "step": 1
+                }
+            },
+            "20": {
+                "code": "cur_voltage",
+                "type": "Integer",
+                "values": {
+                    "unit": "V",
+                    "min": 0,
+                    "max": 5000,
+                    "scale": 1,
+                    "step": 1
+                }
+            },
+            "22": {
+                "code": "voltage_coe",
+                "type": "Integer",
+                "values": {
+                    "min": 0,
+                    "max": 1000000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "23": {
+                "code": "electric_coe",
+                "type": "Integer",
+                "values": {
+                    "min": 0,
+                    "max": 1000000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "24": {
+                "code": "power_coe",
+                "type": "Integer",
+                "values": {
+                    "min": 0,
+                    "max": 1000000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "25": {
+                "code": "electricity_coe",
+                "type": "Integer",
+                "values": {
+                    "min": 0,
+                    "max": 1000000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "26": {
+                "code": "fault",
+                "type": "Bitmap",
+                "values": {
+                    "label": [
+                        "ov_cr",
+                        "ov_vol",
+                        "ov_pwr",
+                        "ls_cr",
+                        "ls_vol",
+                        "ls_pow"
+                    ]
+                }
+            },
+            "27": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "power_off",
+                        "power_on",
+                        "last"
+                    ]
+                }
+            },
+            "28": {
+                "code": "light_mode",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "none",
+                        "relay",
+                        "pos"
+                    ]
+                }
+            },
+            "29": {
+                "code": "child_lock",
+                "type": "Boolean",
+                "values": {}
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Exaustor t\u00e9rreo",
+        "id": "ebda745629fa5ff37azf66",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:6b:26:13:7e:e9",
+        "uuid": "a4c1386b26137ee9",
+        "sn": "10013389200265",
+        "category": "tdq",
+        "product_name": "Zigbee 1 Gang Light Switch Module",
+        "product_id": "4rbqgcuv",
+        "biz_type": 0,
+        "model": "ZWSM16-1",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/04a80a7cabc349c6c6272f897d0e0235.png",
+        "node_id": "a4c1386b26137ee9",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Cooler Growatt",
+        "id": "eb0b0aada2ba444c324hzy",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:c4:52:74:82:14",
+        "uuid": "a4c138c452748214",
+        "sn": "1001368940026A",
+        "category": "tdq",
+        "product_name": "Zigbee 1 Gang Light Switch Module",
+        "product_id": "4rbqgcuv",
+        "biz_type": 0,
+        "model": "ZWSM16-1",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/04a80a7cabc349c6c6272f897d0e0235.png",
+        "node_id": "a4c138c452748214",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Refletor / luz Lateral",
+        "id": "eb240c70368104816ctcbe",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:ed:67:9e:53:3e",
+        "uuid": "a4c138ed679e533e",
+        "sn": "1001268140065E",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c138ed679e533e",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Cozinha / Refl.Quintal",
+        "id": "ebbd383c8c9f626486yve5",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:e1:26:11:08:61",
+        "uuid": "a4c138e126110861",
+        "sn": "1001268140072F",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c138e126110861",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Po\u00e7o",
+        "id": "eb98f6f2f38c02cb95tgdt",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:0a:1e:83:a5:8a",
+        "uuid": "a4c1380a1e83a58a",
+        "sn": "100178483002E0",
+        "category": "tdq",
+        "product_name": "Zigbee 1 Gang Light Switch Module",
+        "product_id": "4rbqgcuv",
+        "biz_type": 0,
+        "model": "ZWSM16-1",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/6458a3165a935498c5ed081794cd7fd7.jpg",
+        "node_id": "a4c1380a1e83a58a",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Piscina / Irriga\u00e7\u00e3o",
+        "id": "eb7e26c699807d7c47z6mn",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:78:45:d0:b1:3b",
+        "uuid": "a4c1387845d0b13b",
+        "sn": "1001784820010D",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c1387845d0b13b",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Bot\u00e3o maior",
+        "id": "eb5174137da0b1dd1aronm",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:7a:db:2f:8b:e8",
+        "uuid": "a4c1387adb2f8be8",
+        "sn": "MGDD-20201CB7",
+        "category": "wxkg",
+        "product_name": "Wireless scene switch",
+        "product_id": "mrpevh8p",
+        "biz_type": 0,
+        "model": "",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1547266640143rRUIA/c650ddbaa7e6d30b51ea677869266fcf.png",
+        "node_id": "a4c1387adb2f8be8",
+        "mapping": {
+            "1": {
+                "code": "switch_mode1",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "click",
+                        "double_click",
+                        "press"
+                    ]
+                }
+            },
+            "10": {
+                "code": "battery_percentage",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Sala / Terra\u00e7o",
+        "id": "ebf6481648ec9f02bcxbh8",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:e2:03:bc:06:8b",
+        "uuid": "a4c138e203bc068b",
+        "sn": "100126814000D4",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c138e203bc068b",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Campainha",
+        "id": "ebc23ba255e49ee2f3xt6q",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:aa:d8:5b:11:dd",
+        "uuid": "a4c138aad85b11dd",
+        "sn": "10013689400856",
+        "category": "tdq",
+        "product_name": "Zigbee 1 Gang Light Switch Module",
+        "product_id": "4rbqgcuv",
+        "biz_type": 0,
+        "model": "ZWSM16-1",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/04a80a7cabc349c6c6272f897d0e0235.png",
+        "node_id": "a4c138aad85b11dd",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Quarto Willian",
+        "id": "eb534dba7df934a734aznp",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:c7:d4:69:52:8c",
+        "uuid": "a4c138c7d469528c",
+        "sn": "100136894005E6",
+        "category": "tdq",
+        "product_name": "Zigbee 1 Gang Light Switch Module",
+        "product_id": "4rbqgcuv",
+        "biz_type": 0,
+        "model": "ZWSM16-1",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/04a80a7cabc349c6c6272f897d0e0235.png",
+        "node_id": "a4c138c7d469528c",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Led Piscina / Led Jardim",
+        "id": "eba64759f622669d50njt4",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:6f:d7:06:77:31",
+        "uuid": "a4c1386fd7067731",
+        "sn": "100126814004D9",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c1386fd7067731",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Saleta / (desl. tudo)",
+        "id": "eb223444746e4a31cbkuut",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:92:b0:db:d6:c7",
+        "uuid": "a4c13892b0dbd6c7",
+        "sn": "100137718002FF",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c13892b0dbd6c7",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Servi\u00e7o / Lavanderia",
+        "id": "eb5becad2816739e40pt3g",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:91:2c:86:8d:a5",
+        "uuid": "a4c138912c868da5",
+        "sn": "100130920008CA",
+        "category": "tdq",
+        "product_name": "PSW-2CH-ZT2S",
+        "product_id": "lmlsduws",
+        "biz_type": 0,
+        "model": "",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay1624869296421wDFy/7997845a16391452efb8fdd8cb73ff22.png",
+        "node_id": "a4c138912c868da5",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "24": {
+                "code": "test_bit",
+                "type": "Integer",
+                "values": {
+                    "min": 0,
+                    "max": 5,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Port\u00e3o",
+        "id": "eb0b41c1c7873dab57q4wp",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:18:72:4e:93:be",
+        "uuid": "a4c13818724e93be",
+        "sn": "10012061103198",
+        "category": "mcs",
+        "product_name": "Contact Sensor",
+        "product_id": "rcuyhwe3",
+        "biz_type": 0,
+        "model": "",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1525749833414yotNt/aeb36a74cb801b0118865d1f8e33dc5e.jpg",
+        "node_id": "a4c13818724e93be",
+        "mapping": {
+            "1": {
+                "code": "doorcontact_state",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "battery_percentage",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Quarto t\u00e9rreo",
+        "id": "eb84419fc78debe772vuna",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "",
+        "category": "tdq",
+        "product_name": "ZigBee Switch\uff08T1)",
+        "product_id": "skueekg3",
+        "biz_type": 0,
+        "model": "YBSW001",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay15306906879543yc3O/1631888933569568981d9.png",
+        "uuid": "eb84419fc78debe772vuna",
+        "node_id": "a4c138da87dd3bde",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Quarto cima Su\u00edte",
+        "id": "ebc5c72c0e85e13cf3s6sx",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "",
+        "category": "tdq",
+        "product_name": "ZigBee Switch\uff08T1)",
+        "product_id": "skueekg3",
+        "biz_type": 0,
+        "model": "YBSW001",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay15306906879543yc3O/1631888933569568981d9.png",
+        "uuid": "ebc5c72c0e85e13cf3s6sx",
+        "node_id": "a4c13882aaf456c5",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Knob Moes",
+        "id": "eb705b6bf2478956f4emxk",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "90:39:5e:ff:fe:4d:2a:80",
+        "uuid": "90395efffe4d2a80",
+        "category": "wxkg",
+        "product_name": "Zigbdee Smart  Scene  Button",
+        "product_id": "qja6nq5z",
+        "biz_type": 0,
+        "model": "ZT-SY-RD",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay157243613457092I4D/1637047911e1c9c436231.png",
+        "node_id": "90395efffe4d2a80",
+        "mapping": {
+            "1": {
+                "code": "switch_mode1",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "click",
+                        "double_click",
+                        "press"
+                    ]
+                }
+            },
+            "10": {
+                "code": "battery_percentage",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "11": {
+                "code": "mode",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "remote_control",
+                        "wireless_switch"
+                    ]
+                }
+            },
+            "12": {
+                "code": "knob_switch_mode_1",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "clockwise_rotation",
+                        "anticlockwise_rotation"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Rob\u00f4 Aspirador de P\u00f3 900",
+        "id": "eb4b88b4753baeb94bycwn",
+        "key": "GueZV?of-:OfSTS-",
+        "mac": "13:cc:28:dc:3d:38",
+        "uuid": "123w86db13cc28dc3d38",
+        "category": "sd",
+        "product_name": "Lds Robot",
+        "product_id": "7vx4ulan46paequq",
+        "biz_type": 0,
+        "model": "KBSF009/KBSF010/KBSF011/KBSF012",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1567915509987ktVbv/32ab647d22f21687cf537e45a9a9c75b.png",
+        "mapping": {
+            "1": {
+                "code": "power",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "power_go",
+                "type": "Boolean",
+                "values": {}
+            },
+            "3": {
+                "code": "mode",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "standby",
+                        "random",
+                        "smart",
+                        "wall_follow",
+                        "mop",
+                        "spiral",
+                        "left_spiral",
+                        "right_spiral",
+                        "right_bow",
+                        "left_bow",
+                        "partial_bow",
+                        "chargego"
+                    ]
+                }
+            },
+            "13": {
+                "code": "seek",
+                "type": "Boolean",
+                "values": {}
+            },
+            "116": {
+                "code": "total_clean_time",
+                "type": "Integer",
+                "values": {
+                    "unit": "",
+                    "min": 0,
+                    "max": 2147483647,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "117": {
+                "code": "total_clean_area",
+                "type": "Integer",
+                "values": {
+                    "unit": "",
+                    "min": 0,
+                    "max": 2147483647,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "118": {
+                "code": "clean_count",
+                "type": "Integer",
+                "values": {
+                    "unit": "",
+                    "min": 0,
+                    "max": 2147483647,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "132": {
+                "code": "device_info",
+                "type": "Raw",
+                "values": {}
+            },
+            "135": {
+                "code": "dust_collection",
+                "type": "Boolean",
+                "values": {}
+            },
+            "151": {
+                "code": "break_clean",
+                "type": "Boolean",
+                "values": {}
+            },
+            "129": {
+                "code": "reset_map",
+                "type": "Boolean",
+                "values": {}
+            }
+        }
+    },
+    {
+        "name": "Zigbee 3 Gang Light Switch Module 2",
+        "id": "ebdce7e3788ea6857aguzn",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:4b:bf:1d:45:a4",
+        "uuid": "a4c1384bbf1d45a4",
+        "sn": "100110483000C3",
+        "category": "tdq",
+        "product_name": "Zigbee 3 Gang Light Switch Module",
+        "product_id": "hbic3ka3",
+        "biz_type": 0,
+        "model": "ZWSM16-3",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/1833702fefc55b7fff08792ed2ee2481.jpg",
+        "node_id": "a4c1384bbf1d45a4",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "3": {
+                "code": "switch_3",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "9": {
+                "code": "countdown_3",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Mesa Willian",
+        "id": "eb387d61e88fc4cc09cjq8",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:ee:e7:40:f5:22",
+        "uuid": "a4c138eee740f522",
+        "sn": "10013771800163",
+        "category": "tdq",
+        "product_name": "Zigbee 2 Gang Light Switch Module",
+        "product_id": "mtnpt6ws",
+        "biz_type": 0,
+        "model": "ZWSM16-2",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/bay158538245316590My/808e29e153d329adc83004f3dc433485.png",
+        "node_id": "a4c138eee740f522",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "switch_2",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "countdown_2",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "14": {
+                "code": "relay_status",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "0",
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "19": {
+                "code": "switch_inching",
+                "type": "String",
+                "values": "{\"maxlen\":255}"
+            },
+            "47": {
+                "code": "switch_type",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "flip",
+                        "sync",
+                        "button"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Luz Colorida",
+        "id": "ebf8be720d3d5ec3bczyms",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:04:51:d3:2e:9b",
+        "uuid": "a4c1380451d32e9b",
+        "sn": "100138231000EE",
+        "category": "dj",
+        "product_name": "",
+        "product_id": "bfwvfyx1",
+        "biz_type": 0,
+        "model": "SYT01",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1465021689173TLGxd/16527612751e7f8a3676b.png",
+        "node_id": "a4c1380451d32e9b",
+        "mapping": {
+            "1": {
+                "code": "switch_led",
+                "type": "Boolean",
+                "values": {}
+            },
+            "2": {
+                "code": "work_mode",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "white",
+                        "colour",
+                        "scene",
+                        "music"
+                    ]
+                }
+            },
+            "3": {
+                "code": "bright_value_v2",
+                "type": "Integer",
+                "values": {
+                    "min": 10,
+                    "max": 1000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "4": {
+                "code": "temp_value_v2",
+                "type": "Integer",
+                "values": {
+                    "min": 0,
+                    "max": 1000,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "5": {
+                "code": "colour_data_v2",
+                "type": "Json",
+                "raw_values": "{\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}",
+                "values": {
+                    "h": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 360,
+                        "step": 1
+                    },
+                    "s": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 1000,
+                        "step": 1
+                    },
+                    "v": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 1000,
+                        "step": 1
+                    }
+                }
+            },
+            "6": {
+                "code": "scene_data_v2",
+                "type": "Json",
+                "raw_values": "{\"scene_num\":{\"min\":1,\"scale\":0,\"max\":8,\"step\":1},\"scene_units\": {\"unit_change_mode\":{\"range\":[\"static\",\"jump\",\"gradient\"]},\"unit_switch_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"unit_gradient_duration\":{\"min\":0,\"scale\":0,\"max\":100,\"step\":1},\"bright\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"temperature\":{\"min\":0,\"scale\":0,\"max\":1000,\"step\":1},\"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}}}",
+                "values": {
+                    "scene_num": {
+                        "min": 1,
+                        "scale": 0,
+                        "max": 8,
+                        "step": 1
+                    },
+                    "scene_units": {
+                        "unit_change_mode": {
+                            "range": [
+                                "static",
+                                "jump",
+                                "gradient"
+                            ]
+                        },
+                        "unit_switch_duration": {
+                            "min": 0,
+                            "scale": 0,
+                            "max": 100,
+                            "step": 1
+                        },
+                        "unit_gradient_duration": {
+                            "min": 0,
+                            "scale": 0,
+                            "max": 100,
+                            "step": 1
+                        },
+                        "bright": {
+                            "min": 0,
+                            "scale": 0,
+                            "max": 1000,
+                            "step": 1
+                        },
+                        "temperature": {
+                            "min": 0,
+                            "scale": 0,
+                            "max": 1000,
+                            "step": 1
+                        },
+                        "h": {
+                            "min": 0,
+                            "scale": 0,
+                            "unit": "",
+                            "max": 360,
+                            "step": 1
+                        },
+                        "s": {
+                            "min": 0,
+                            "scale": 0,
+                            "unit": "",
+                            "max": 1000,
+                            "step": 1
+                        },
+                        "v": {
+                            "min": 0,
+                            "scale": 0,
+                            "unit": "",
+                            "max": 1000,
+                            "step": 1
+                        }
+                    }
+                }
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "8": {
+                "code": "music_data",
+                "type": "Json",
+                "raw_values": "{\"change_mode\":{\"range\":[\"direct\",\"gradient\"]}, \"bright\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"temperature\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1}}",
+                "values": {
+                    "change_mode": {
+                        "range": [
+                            "direct",
+                            "gradient"
+                        ]
+                    },
+                    "bright": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 1000,
+                        "step": 1
+                    },
+                    "temperature": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 1000,
+                        "step": 1
+                    },
+                    "h": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 360,
+                        "step": 1
+                    },
+                    "s": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 255,
+                        "step": 1
+                    },
+                    "v": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 255,
+                        "step": 1
+                    }
+                }
+            },
+            "9": {
+                "code": "control_data",
+                "type": "Json",
+                "raw_values": "{\"change_mode\":{\"range\":[\"direct\",\"gradient\"]}, \"bright\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"temperature\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":1000,\"step\":1}, \"h\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":360,\"step\":1},\"s\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1},\"v\":{\"min\":0,\"scale\":0,\"unit\":\"\",\"max\":255,\"step\":1}}",
+                "values": {
+                    "change_mode": {
+                        "range": [
+                            "direct",
+                            "gradient"
+                        ]
+                    },
+                    "bright": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 1000,
+                        "step": 1
+                    },
+                    "temperature": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 1000,
+                        "step": 1
+                    },
+                    "h": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 360,
+                        "step": 1
+                    },
+                    "s": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 255,
+                        "step": 1
+                    },
+                    "v": {
+                        "min": 0,
+                        "scale": 0,
+                        "unit": "",
+                        "max": 255,
+                        "step": 1
+                    }
+                }
+            },
+            "30": {
+                "code": "rhythm_mode",
+                "type": "Raw",
+                "values": {
+                    "maxlen": "255"
+                }
+            },
+            "31": {
+                "code": "sleep_mode",
+                "type": "Raw",
+                "values": {
+                    "maxlen": "255"
+                }
+            },
+            "32": {
+                "code": "wakeup_mode",
+                "type": "Raw",
+                "values": {
+                    "maxlen": "255"
+                }
+            },
+            "33": {
+                "code": "power_memory",
+                "type": "Raw",
+                "values": {}
+            },
+            "34": {
+                "code": "do_not_disturb",
+                "type": "Boolean",
+                "values": {}
+            },
+            "209": {
+                "code": "cycle_timing",
+                "type": "Raw",
+                "values": {}
+            },
+            "210": {
+                "code": "random_timing",
+                "type": "Raw",
+                "values": {}
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Sensor de Movimento 2",
+        "id": "ebf0d927d6430dbf0fwxcy",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:e0:a3:51:cf:24",
+        "uuid": "a4c138e0a351cf24",
+        "category": "pir",
+        "product_name": "Motion Sensor",
+        "product_id": "msl6wxk9",
+        "biz_type": 0,
+        "model": "1.0.1",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay15431316572284AcPZ/1639379788d070fb14fd0.jpg",
+        "node_id": "a4c138e0a351cf24",
+        "mapping": {
+            "1": {
+                "code": "pir",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "pir",
+                        "none"
+                    ]
+                }
+            },
+            "4": {
+                "code": "battery_percentage",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "9": {
+                "code": "pir_sensitivity",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "low",
+                        "middle",
+                        "high"
+                    ]
+                }
+            },
+            "10": {
+                "code": "pir_time",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "30s",
+                        "60s",
+                        "120s"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Bot\u00e3o menor",
+        "id": "eb69c6b3c145d10580rju2",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "a4:c1:38:33:b9:fd:1b:6e",
+        "uuid": "a4c13833b9fd1b6e",
+        "sn": "MGDD-202019F9",
+        "category": "wxkg",
+        "product_name": "Wireless scene switch",
+        "product_id": "mrpevh8p",
+        "biz_type": 0,
+        "model": "",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1547266640143rRUIA/c650ddbaa7e6d30b51ea677869266fcf.png",
+        "node_id": "a4c13833b9fd1b6e",
+        "mapping": {
+            "1": {
+                "code": "switch_mode1",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "click",
+                        "double_click",
+                        "press"
+                    ]
+                }
+            },
+            "10": {
+                "code": "battery_percentage",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Term\u00f4metro",
+        "id": "ebe427c16b5d09c41483oy",
+        "key": "RuNSG4%Pd#-./:+*",
+        "mac": "",
+        "category": "wsdcg",
+        "product_name": "\u6e29\u6e7f\u5ea6 \u5e26\u5c4f ",
+        "product_id": "bjawzodf",
+        "biz_type": 0,
+        "model": "RSH",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1511250453937mDBJE/9e9569441ba6fab151710227c94707f4.png",
+        "uuid": "ebe427c16b5d09c41483oy",
+        "node_id": "a4c138bd31ed3e55",
+        "mapping": {
+            "1": {
+                "code": "va_temperature",
+                "type": "Integer",
+                "values": {
+                    "unit": "\u00b0C",
+                    "min": -200,
+                    "max": 600,
+                    "scale": 1,
+                    "step": 1
+                }
+            },
+            "2": {
+                "code": "va_humidity",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 999,
+                    "scale": 1,
+                    "step": 1
+                }
+            },
+            "4": {
+                "code": "battery_percentage",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            },
+            "9": {
+                "code": "temp_unit_convert",
+                "type": "Enum",
+                "values": {
+                    "range": [
+                        "c",
+                        "f"
+                    ]
+                }
+            }
+        },
+        "parent": "eb94c1f9398e0dd2c1hsxs"
+    },
+    {
+        "name": "Ar Willian",
+        "id": "ebaef706715eb6ce79rdbq",
+        "key": ")Zr!G]?yfc{W2*|o",
+        "mac": "",
+        "category": "infrared_ac",
+        "product_name": "Air Conditioning",
+        "product_id": "qzktzhehinzsz2je",
+        "biz_type": 0,
+        "model": "",
+        "sub": true,
+        "icon": "https://images.tuyaus.com/smart/icon/001453365846342fhj9e/11c62df7bd89c10f43d3e5ee8d13b4f4.png",
+        "uuid": "ebaef706715eb6ce79rdbq",
+        "node_id": "46ab1395fb99f63c",
+        "mapping": {
+            "wind": {
+                "code": "wind",
+                "type": "ENUM",
+                "values": {
+                    "min": 0,
+                    "max": 3,
+                    "scale": 0,
+                    "step": 1,
+                    "type": "Integer"
+                }
+            },
+            "mode": {
+                "code": "mode",
+                "type": "ENUM",
+                "values": {
+                    "min": 0,
+                    "max": 4,
+                    "scale": 0,
+                    "step": 1,
+                    "type": "Integer"
+                }
+            },
+            "power": {
+                "code": "power",
+                "type": "BOOLEAN",
+                "values": {}
+            },
+            "temp": {
+                "code": "temp",
+                "type": "ENUM",
+                "values": {
+                    "min": 16,
+                    "max": 30,
+                    "scale": 0,
+                    "step": 1,
+                    "type": "Integer"
+                }
+            },
+            "F": {
+                "code": "F",
+                "type": "ENUM",
+                "values": {
+                    "min": 0,
+                    "max": 3,
+                    "scale": 0,
+                    "step": 1,
+                    "type": "Integer"
+                }
+            },
+            "M": {
+                "code": "M",
+                "type": "ENUM",
+                "values": {
+                    "min": 0,
+                    "max": 4,
+                    "scale": 0,
+                    "step": 1,
+                    "type": "Integer"
+                }
+            },
+            "PowerOff": {
+                "code": "PowerOff",
+                "type": "STRING",
+                "values": "PowerOff"
+            },
+            "PowerOn": {
+                "code": "PowerOn",
+                "type": "STRING",
+                "values": "PowerOn"
+            },
+            "T": {
+                "code": "T",
+                "type": "ENUM",
+                "values": {
+                    "min": 16,
+                    "max": 30,
+                    "scale": 0,
+                    "step": 1,
+                    "type": "Integer"
+                }
+            }
+        },
+        "parent": "eb6d76b897dab430f323rj"
+    },
+    {
+        "name": "Controle Remoto",
+        "id": "eb6d76b897dab430f323rj",
+        "key": ")Zr!G]?yfc{W2*|o",
+        "mac": "c4:82:e1:71:44:b5",
+        "uuid": "5abf0bee59110651",
+        "sn": "10012594400B42",
+        "category": "wnykq",
+        "product_name": "Smart IR",
+        "product_id": "whs3cty93fzrqkpt",
+        "biz_type": 0,
+        "model": "S06ProWB3S\u65b0\u754c\u9762",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1525749833414yotNt/af87e60f680f9a7c2aedaa645418ee51.png",
+        "mapping": {
+            "101": {
+                "code": "va_temperature",
+                "type": "Integer",
+                "values": {
+                    "unit": "\u00b0C",
+                    "min": -200,
+                    "max": 800,
+                    "scale": 1,
+                    "step": 1
+                }
+            },
+            "102": {
+                "code": "va_humidity",
+                "type": "Integer",
+                "values": {
+                    "unit": "%",
+                    "min": 0,
+                    "max": 100,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        }
+    },
+    {
+        "name": "Virtual 2",
+        "id": "vdevo171196633911192",
+        "key": "P}7qYfJ!{Knl9dF;",
+        "mac": "",
+        "category": "kg",
+        "product_name": "TB11",
+        "product_id": "4nztuyvatavdf0zt",
+        "biz_type": 0,
+        "model": "TB11",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1497774171616QiQ8R/a08b1d85fc07a1e0b05eabab4f2b8930.png",
+        "uuid": "vdevo171196633911192",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "9": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 86400,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        }
+    },
+    {
+        "name": "Virtual 1",
+        "id": "vdevo171193226543024",
+        "key": "#C064~^rW!h.}Jy[",
+        "mac": "",
+        "category": "kg",
+        "product_name": "DM-ZB1SW",
+        "product_id": "qyf0xkkv",
+        "biz_type": 0,
+        "model": "GSEZLN1",
+        "sub": false,
+        "icon": "https://images.tuyaus.com/smart/icon/ay1559361599226d5lhc/b23fa7db47b693c2216bec54b2f291f4.png",
+        "uuid": "vdevo171193226543024",
+        "mapping": {
+            "1": {
+                "code": "switch_1",
+                "type": "Boolean",
+                "values": {}
+            },
+            "7": {
+                "code": "countdown_1",
+                "type": "Integer",
+                "values": {
+                    "unit": "s",
+                    "min": 0,
+                    "max": 43200,
+                    "scale": 0,
+                    "step": 1
+                }
+            }
+        }
+    }
+]
+
+>> Saving list to devices.json
+    35 registered devices saved
+
+>> Saving raw TuyaPlatform response to tuya-raw.json
+
+Poll local devices? (Y/n): y
+
+Scanning local network for Tuya devices...
+    3 local devices discovered                     
+
+Polling local devices...
+    [Alarme                   ] Error: No IP found
+    [Ar Willian               ] Error: No IP found
+    [Bombas 1° e 2° andar     ] Error: No IP found
+    [Botão maior              ] Error: No IP found
+    [Botão menor              ] Error: No IP found
+    [Campainha                ] Error: No IP found
+    [Controle Remoto          ] Error: No IP found
+    [Cooler Growatt           ] Error: No IP found
+    [Cozinha / Refl.Quintal   ] Error: No IP found
+    [Energia                  ] Error: No IP found
+    [Exaustor térreo          ] Error: No IP found
+    [Knob Moes                ] Error: No IP found
+    [LAB Piscina              ] 192.168.6.171      - DPS: {'8': 282, '106': 796, '111': 39, '116': 78, '121': 45, '126': 974, '131': 180, '136': 78, '141': 0}
+    [Led Piscina / Led Jardim ] Error: No IP found
+    [Luz Colorida             ] Error: No IP found
+    [Mesa Willian             ] Error: No IP found
+    [Monitor Câmeras          ] Error: No IP found
+    [Piscina / Irrigação      ] Error: No IP found
+    [Portão                   ] Error: No IP found
+    [Poço                     ] Error: No IP found
+    [Quarto Willian           ] Error: No IP found
+    [Quarto cima Suíte        ] Error: No IP found
+    [Quarto térreo            ] Error: No IP found
+    [Refletor / luz Lateral   ] Error: No IP found
+    [Robô Aspirador de Pó 900 ] 192.168.6.156      - DPS: {'101': False, '102': False, '103': True, '104': 'backcharge', '105': 'fullcharge', '106': 100, '107': 3940, '108': 57, '109': 'auto', '110': 'mid', '113': False, '114': 8, '116': 21452, '117': 331, '118': 9, '119': 21452, '120': 21452, '121': 21452, '122': 0, '128': '20', '133': '0', '136': '1', '137': True, '138': False, '139': False, '141': False, '144': True, '151': False}
+    [Sala / Terraço           ] Error: No IP found
+    [Saleta / (desl. tudo)    ] Error: No IP found
+    [Sensor caixas d'água     ] Error: No IP found
+    [Sensor de Movimento 2    ] Error: No IP found
+    [Serviço / Lavanderia     ] Error: No IP found
+    [Termômetro               ] Error: No IP found
+    [Virtual 1                ] Error: No IP found
+    [Virtual 2                ] Error: No IP found
+    [Zigbee 3 Gang Light Switc] Error: No IP found
+    [Zigbee Wired Gateway     ] 192.168.6.104      - No Response
+
+>> Saving device snapshot data to snapshot.json
+
+
+>> Saving IP addresses to devices.json
+    3 device IP addresses found
+
+Done.
+
+willian@MacBook-Air-de-Willian ~ % 

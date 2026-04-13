@@ -1,0 +1,128 @@
+esphome:
+  name: lab-piscina
+  friendly_name: "Lab Piscina RLight"
+  includes: [tuya_w218.h]
+  on_boot:
+    priority: -10
+    then:
+      - lambda: |-
+          static W218Driver* driver = new W218Driver(id(uart_bus));
+          driver->ph_sensor = id(ph_piscina);
+          driver->orp_sensor = id(orp_piscina);
+          driver->temp_sensor = id(temp_agua);
+          driver->tds_sensor = id(tds_cond);
+          driver->ec_sensor = id(ec_piscina);
+          driver->salinity_sensor = id(sal_piscina);
+          driver->cf_sensor = id(cf_piscina);
+          driver->rh_sensor = id(rh_piscina);
+          driver->time_source = id(sntp_time);
+          id(w218_ptr) = (void*) driver;
+  on_loop:
+    then:
+      - lambda: |-
+          if(id(w218_ptr) != nullptr) {
+            ((W218Driver*)id(w218_ptr))->tick();
+          }
+
+esp32:
+  board: esp32-c3-devkitm-1
+  variant: esp32c3
+  framework: {type: arduino}
+
+wifi:
+  # Locking to the stronger AP BSSID to prevent drops during sync
+  networks:
+    - ssid: "ELIGHT"
+      password: "universo"
+      bssid: D8:77:8B:98:10:0B
+
+api:
+  encryption:
+    key: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx="
+
+ota:
+  - platform: esphome
+    password: "xxxxxxxxxxxxxxxxxx"
+
+web_server:
+  port: 80
+  version: 2
+
+logger:
+  level: DEBUG
+  hardware_uart: USB_SERIAL_JTAG
+
+uart:
+  id: uart_bus
+  tx_pin: GPIO21
+  rx_pin: GPIO20
+  baud_rate: 9600
+
+globals:
+  - id: w218_ptr
+    type: void*
+    initial_value: 'nullptr'
+
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: "America/Recife"
+
+sensor:
+  - platform: wifi_signal
+    name: "Sinal Wi-Fi"
+  
+  - platform: template
+    name: "pH da Piscina"
+    id: ph_piscina
+    unit_of_measurement: "pH"
+    accuracy_decimals: 2
+    state_class: measurement
+    
+  - platform: template
+    name: "ORP da Piscina"
+    id: orp_piscina
+    unit_of_measurement: "mV"
+    accuracy_decimals: 0
+    state_class: measurement
+    
+  - platform: template
+    name: "Temperatura da Água"
+    id: temp_agua
+    unit_of_measurement: "°C"
+    accuracy_decimals: 1
+    state_class: measurement
+    
+  - platform: template
+    name: "TDS e Condutividade"
+    id: tds_cond
+    unit_of_measurement: "µS/cm"
+    accuracy_decimals: 0
+    state_class: measurement
+
+  - platform: template
+    name: "EC (Eletrocondutividade)"
+    id: ec_piscina
+    unit_of_measurement: "mS/cm"
+    accuracy_decimals: 2
+    state_class: measurement
+
+  - platform: template
+    name: "Salinidade"
+    id: sal_piscina
+    unit_of_measurement: "ppm"
+    accuracy_decimals: 0
+    state_class: measurement
+
+  - platform: template
+    name: "Fator CF"
+    id: cf_piscina
+    accuracy_decimals: 1
+    state_class: measurement
+
+  - platform: template
+    name: "Umidade RH"
+    id: rh_piscina
+    unit_of_measurement: "%"
+    accuracy_decimals: 0
+    state_class: measurement

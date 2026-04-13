@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pool Guard Premium | Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --bg: #0f172a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(0, 210, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(58, 123, 213, 0.15) 0%, transparent 40%);
+        }
+
+        .header {
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-weight: 600;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            width: 90%;
+            max-width: 1200px;
+            padding-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 210, 255, 0.3);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+
+        .label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+
+        .value {
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .unit {
+            font-size: 1.2rem;
+            opacity: 0.5;
+            margin-left: 0.5rem;
+        }
+
+        .status {
+            padding: 0.5rem 1rem;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background: rgba(52, 211, 153, 0.1);
+            color: #34d399;
+        }
+
+        .status.warning {
+            background: rgba(251, 191, 36, 0.1);
+            color: #fbbf24;
+        }
+
+        .status.danger {
+            background: rgba(248, 113, 113, 0.1);
+            color: #f87171;
+        }
+
+        .ip-input {
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 99px;
+            color: white;
+            outline: none;
+            width: 250px;
+            text-align: center;
+        }
+
+        .ip-input:focus {
+            border-color: var(--primary);
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #34d399;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            opacity: 0.4;
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .value { font-size: 3rem; }
+            .header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Pool Guard Premium</h1>
+    </header>
+
+    <input type="text" id="ipAddress" class="ip-input" placeholder="IP do ESP32 (ex: 192.168.1.15)" value="192.168.6.151">
+
+    <div class="container">
+        <!-- pH Card -->
+        <div class="card">
+            <div class="label">Potencial Hidrogênico</div>
+            <div class="value" id="val-ph">--<span class="unit">pH</span></div>
+            <div id="status-ph" class="status">Monitorando</div>
+        </div>
+
+        <!-- ORP Card -->
+        <div class="card">
+            <div class="label">Potencial Redox</div>
+            <div class="value" id="val-orp">--<span class="unit">mV</span></div>
+            <div id="status-orp" class="status">Estável</div>
+        </div>
+
+        <!-- Temp Card -->
+        <div class="card">
+            <div class="label">Temperatura</div>
+            <div class="value" id="val-temp">--<span class="unit">°C</span></div>
+            <div id="status-temp" class="status">Ideal</div>
+        </div>
+
+        <!-- TDS Card -->
+        <div class="card">
+            <div class="label">TDS / Condutividade</div>
+            <div class="value" id="val-tds">--<span class="unit">µS</span></div>
+            <div id="status-tds" class="status">Normal</div>
+        </div>
+    </div>
+
+    <footer>
+        <span class="live-dot"></span> Dados em Tempo Real via ESPHome API
+    </footer>
+
+    <script>
+        const ipInput = document.getElementById('ipAddress');
+        let eventSource = null;
+
+        function connect() {
+            if (eventSource) eventSource.close();
+            
+            const ip = ipInput.value;
+            if (!ip) return;
+
+            console.log(`Conectando a http://${ip}/events...`);
+            eventSource = new EventSource(`http://${ip}/events`);
+
+            eventSource.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                
+                // Mapeamento de IDs do ESPHome
+                if (data.id === 'ph_piscina') updateValue('ph', data.value);
+                if (data.id === 'orp_piscina') updateValue('orp', data.value);
+                if (data.id === 'temp_agua') updateValue('temp', data.value);
+                if (data.id === 'tds_cond') updateValue('tds', data.value);
+            };
+
+            eventSource.onerror = () => {
+                console.error("Erro na conexão SSE. Tentando reconectar...");
+            };
+        }
+
+        function updateValue(id, value) {
+            const el = document.getElementById(`val-${id}`);
+            const unit = id === 'ph' ? 'pH' : (id === 'orp' ? 'mV' : (id === 'temp' ? '°C' : 'µS'));
+            
+            let displayValue = typeof value === 'number' ? value.toFixed(2) : value;
+            if (id === 'orp' || id === 'tds') displayValue = Math.round(value);
+
+            el.innerHTML = `${displayValue}<span class="unit">${unit}</span>`;
+
+            // Lógica de Status dinâmica
+            const statusEl = document.getElementById(`status-${id}`);
+            if (id === 'ph') {
+                if (value < 7.0 || value > 7.6) {
+                    statusEl.innerText = "Ajuste Necessário";
+                    statusEl.className = "status danger";
+                } else {
+                    statusEl.innerText = "Ideal";
+                    statusEl.className = "status";
+                }
+            }
+        }
+
+        ipInput.addEventListener('change', connect);
+        // Tentar conectar inicialmente
+        connect();
+    </script>
+</body>
+</html>

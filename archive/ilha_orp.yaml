@@ -1,0 +1,146 @@
+esphome:
+  name: piscina-ilha-orp
+
+esp32:
+  board: esp32-c3-devkitm-1
+  variant: esp32c3
+  framework:
+    type: arduino
+
+wifi:
+  ssid: "ELIGHT"
+  password: "universo"
+
+web_server:
+  port: 80
+
+api:
+
+logger:
+  hardware_uart: USB_SERIAL_JTAG
+
+ota:
+  - platform: esphome
+
+i2c:
+  sda: GPIO4
+  scl: GPIO5
+  scan: true
+
+ads1115:
+  - id: ads_sensor
+    address: 0x48
+
+globals:
+  - id: ref1_orp
+    type: float
+    restore_value: yes
+    initial_value: '650'
+  - id: volt1_orp
+    type: float
+    restore_value: yes
+    initial_value: '2.7'
+  - id: ref2_orp
+    type: float
+    restore_value: yes
+    initial_value: '450'
+  - id: volt2_orp
+    type: float
+    restore_value: yes
+    initial_value: '3.0'
+
+number:
+  - platform: template
+    name: "Calibração: ORP Alvo 1 (mV)"
+    id: input_ref1
+    min_value: -2000
+    max_value: 2000
+    step: 1
+    optimistic: true
+    set_action:
+      - globals.set:
+          id: ref1_orp
+          value: !lambda "return x;"
+
+  - platform: template
+    name: "Calibração: Voltagem Lida 1"
+    id: input_volt1
+    min_value: 0
+    max_value: 5
+    step: 0.001
+    optimistic: true
+    set_action:
+      - globals.set:
+          id: volt1_orp
+          value: !lambda "return x;"
+
+  - platform: template
+    name: "Calibração: ORP Alvo 2 (mV)"
+    id: input_ref2
+    min_value: -2000
+    max_value: 2000
+    step: 1
+    optimistic: true
+    set_action:
+      - globals.set:
+          id: ref2_orp
+          value: !lambda "return x;"
+
+  - platform: template
+    name: "Calibração: Voltagem Lida 2"
+    id: input_volt2
+    min_value: 0
+    max_value: 5
+    step: 0.001
+    optimistic: true
+    set_action:
+      - globals.set:
+          id: volt2_orp
+          value: !lambda "return x;"
+
+sensor:
+  # Voltagem bruta com pipeline de filtro corrigido — mesmo critério do pH
+  - platform: ads1115
+    ads1115_id: ads_sensor
+    multiplexer: A0_GND
+    gain: 6.144
+    name: "Voltagem Bruta ORP (Referência)"
+    id: voltagem_bruta
+    update_interval: 0.5s
+    accuracy_decimals: 4
+    unit_of_measurement: "V"
+    filters:
+      - median:
+          window_size: 11
+          send_every: 11
+      - sliding_window_moving_average:
+          window_size: 5
+          send_every: 1
+
+  # ORP calibrado — sem compensação de temperatura porque ORP
+  # já é referenciado a 25°C pela tabela do cloro (conversão via tabela
+  # de Zobell se precisar de exatidão analítica, mas para piscina não é necessário)
+  - platform: template
+    name: "ORP da Piscina (Calibrado)"
+    id: orp_final
+    unit_of_measurement: "mV"
+    accuracy_decimals: 0
+    update_interval: 6s
+    lambda: |-
+      float v_atual = id(voltagem_bruta).state;
+      if (isnan(v_atual)) return NAN;
+
+      float v1   = id(volt1_orp); float orp1 = id(ref1_orp);
+      float v2   = id(volt2_orp); float orp2 = id(ref2_orp);
+
+      if (fabsf(v1 - v2) < 0.001f) return orp1;
+
+      float inclinacao = (orp2 - orp1) / (v2 - v1);
+      float offset     = orp1 - (inclinacao * v1);
+      float orp_calc   = (inclinacao * v_atual) + offset;
+
+      // Limita ao range físico real de eletrodos ORP em piscinas
+      if (orp_calc < -1000.0f) orp_calc = -1000.0f;
+      if (orp_calc >  1000.0f) orp_calc =  1000.0f;
+
+      return orp_calc;
