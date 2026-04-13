@@ -48,7 +48,6 @@ class W218Driver {
   uint32_t last_query_sent_ = 0;
 
   void parse_tuya_byte(uint8_t c) {
-    ESP_LOGV("w218_raw", "RX -> %02X (state %d)", c, state_);
     switch (state_) {
       case 0: if (c == 0x55) state_ = 1; break;
       case 1: if (c == 0xAA) state_ = 2; else state_ = 0; break;
@@ -130,7 +129,7 @@ class W218Driver {
         else if (len == 2) val = (data[offset+4] << 8) | data[offset+5];
         else if (len == 1) val = data[offset+4];
 
-        ESP_LOGI("w218", "Got DP %d = %u", dp_id, val);
+        ESP_LOGD("w218", "Got DP %d = %u", dp_id, val);
 
         if (dp_id == 106 && ph_sensor) ph_sensor->publish_state(val * 0.01f);
         else if (dp_id == 131 && orp_sensor) orp_sensor->publish_state(val);
