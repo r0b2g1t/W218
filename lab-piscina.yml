@@ -1,5 +1,5 @@
 esphome:
-  name: lab-piscina
+  name: piscina-rlight
   friendly_name: "Lab Piscina RLight"
   includes: [tuya_w218.h]
   on_boot:
