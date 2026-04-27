@@ -1,100 +1,61 @@
-# 🏊‍♂️ Pool Guard Premium: Monitoramento W218 via ESP32-C3
+# Projeto PH ORP: Monitoramento W218 via ESP32-C3
 
-Este projeto transforma um monitor de qualidade de água **Tuya W218 8-in-1** genérico em uma ferramenta poderosa e integrada localmente via **ESPHome**. Substituímos o módulo original WB3S por um **ESP32-C3 Super Mini**, revelando todos os segredos do protocolo serial para controle total.
+Este repositório contém a implementação completa para integração local do monitor de qualidade de água Tuya W218 (8-em-1) utilizando o ecossistema ESPHome. A solução substitui o módulo Wi-Fi original (WB3S) por um ESP32-C3, eliminando a dependência de nuvem e permitindo monitoramento local de alta performance.
 
-![Badge ESPHome](https://img.shields.io/badge/ESPHome-2024.3.3-blue?style=for-the-badge)
-![Badge License MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+## Arquitetura e Hardware
 
----
+O monitor W218 utiliza um microcontrolador interno (MCU) para a leitura analógica dos sensores, comunicando-se com o módulo de rede via protocolo serial Tuya V3. Para a integração, o módulo original foi removido e substituído por um ESP32-C3 Super Mini.
 
-## 🚀 Funcionalidades
-
-- **Monitoramento 8-em-1**: pH, ORP, Temp, TDS, EC, Salinidade, Fator CF e Umidade.
-- **Handshake Estabilizado**: Lógica customizada para vencer o deadlock do protocolo Tuya V3.
-- **Dashboard Premium**: Acompanhe os dados em tempo real via navegador com interface Glassmorphism.
-- **Privacidade Total**: Zero dependência da nuvem Tuya/SmartLife.
-
----
-
-## ⚙️ 1. Hardware e Conexão
-
-O monitor W218 possui um MCU interno que lê os sensores. O módulo Wi-Fi (WB3S) serve apenas como ponte. Para o transplante, conecte o ESP32-C3 conforme abaixo:
-
-### Diagrama de Pinagem
+### Pinagem de Conexão
 | WB3S (Original) | ESP32-C3 Super Mini | Função |
 | :--- | :--- | :--- |
-| **VCC (3.3V)** | **3.3V** | Alimentação |
-| **GND** | **GND** | Terra |
-| **TX** | **GPIO 21** | Transmissão (ESP -> MCU) |
-| **RX** | **GPIO 20** | Recepção (MCU -> ESP) |
+| VCC (3.3V) | 3.3V | Alimentação |
+| GND | GND | Terra |
+| TX | GPIO 21 | Transmissão (ESP -> MCU) |
+| RX | GPIO 20 | Recepção (MCU -> ESP) |
 
 ```mermaid
 graph LR
-    MCU[W218 Internal MCU] -- TX --> RX[GPIO 20 ESP32]
-    RX -- Parsing --> Logic[ESPHome Driver]
-    TX_ESP[GPIO 21 ESP32] -- WiFi Status --> RX_MCU[MCU RX]
+    MCU[W218 MCU] -- UART RX/TX --> ESP[ESP32-C3]
+    ESP -- ESPHome API --> HA[Home Assistant]
+    ESP -- Native API --> Dash[ESPHome Dashboard]
 ```
 
-> [!WARNING]
-> Certifique-se de que a conexão seja direta (3.3V). Não é necessário utilizar resistores na linha serial para este modelo.
+## Otimizações de Firmware e Estabilidade
 
----
+Diferente de implementações genéricas, este firmware foi otimizado para evitar travamentos de rede comuns em dispositivos ESP32-C3 operando com múltiplos sensores:
 
-## 🛠 2. Instalação e Configuração
+1.  **Gerenciamento de Sockets**: Aumentamos a tabela de sockets do lwIP de 8 para 16 (`CONFIG_LWIP_MAX_SOCKETS: 16`). Isso resolve o erro crítico de "Socket Exhaustion" (ENFILE/errno 23) que ocorre quando o dispositivo gerencia simultaneamente a API, conexões de log e mDNS.
+2.  **Redução de Carga de Rede**: O componente `web_server` foi desativado. Isso economiza memória RAM e sockets TCP, priorizando a estabilidade da conexão nativa da API com o Home Assistant.
+3.  **Ajuste de Latência**: O modo de economia de energia do Wi-Fi foi desativado (`power_save_mode: none`) para garantir handshakes de criptografia Noise rápidos e estáveis.
 
-### Passo 1: Patch do PlatformIO
-Se estiver usando versões recentes do Python, pode ocorrer um erro de importação do `fatfs`. Aplique este patch em `~/.platformio/platforms/espressif32/builder/main.py`:
+## Decifração do Protocolo Tuya V3
 
-```python
-# Torne a importação do fatfs opcional
-try:
-    import fatfs
-except ImportError:
-    fatfs = None
-```
+Para que o MCU do W218 envie os dados, o driver customizado (`tuya_w218.h`) implementa os seguintes requisitos específicos:
 
-### Passo 2: Compilação
-Use o arquivo `lab-piscina.yml` como base. Ele carrega automaticamente o driver customizado `tuya_w218.h`.
+*   **Status de Conectividade**: O status reportado ao MCU deve ser obrigatoriamente `0x04` (Cloud Connected). Status `0x03` resulta em silêncio por parte do MCU.
+*   **Versionamento de Cabeçalho**: Embora seja um protocolo v3, as respostas devem utilizar o byte de versão `0x00` para garantir a compatibilidade de recepção pelo MCU original.
+*   **Heartbeat**: Implementado intervalo de 10 segundos para manter o watchdog do MCU ativo.
 
-```bash
-esphome run lab-piscina.yml
-```
+### Mapeamento de Data Points (DP IDs)
+| Sensor | ID | Multiplicador | Unidade |
+| :--- | :--- | :--- | :--- |
+| pH | 106 | 0.01 | pH |
+| ORP | 131 | 1.0 | mV |
+| Temperatura | 8 / 108 | 0.1 | °C |
+| TDS | 126 | 1.0 | ppm |
+| EC | 116 | 0.01 | mS/cm |
+| Salinidade | 121 | 1.0 | ppm |
+| Fator CF | 136 | 0.1 | CF |
 
----
+## Instalação
 
-## 🕵️‍♂️ 3. Segredos do Protocolo Tuya V3 (W218)
+1.  Configure suas credenciais no arquivo `secrets.yaml` (utilize o template padrão do ESPHome).
+2.  Compile e faça o upload utilizando o ESPHome:
+    ```bash
+    esphome run lab-piscina.yml
+    ```
 
-Durante o desenvolvimento, deciframos o comportamento "teimoso" do W218:
+## Licença
 
-1.  **O Status 0x04**: O MCU ignora conexões que reportam status `0x03` (apenas WiFi). Você **deve** reportar `0x04` (Cloud Connected) para que ele libere os Data Points (DPs).
-2.  **Cabeçalho Fallback**: Embora o MCU use a versão 3 do protocolo, ele muitas vezes ignora respostas com cabeçalho `0x03`. O segredo é responder sempre com a versão `0x00`.
-3.  **Proatividade**: O ESP32 deve enviar um Heartbeat (`CMD 0x00`) a cada 10-15 segundos, ou o MCU silencia a UART.
-
-### Tabela de Data Points (DP IDs)
-| Sensor | ID | Multiplicador |
-| :--- | :--- | :--- |
-| pH | 106 | 0.01 |
-| ORP | 131 | 1.0 |
-| Temperatura | 8 / 108 | 0.1 |
-| TDS | 126 | 1.0 |
-| EC | 116 | 0.01 |
-| Salinidade | 121 | 1.0 |
-| Fator CF | 136 | 0.1 |
-
----
-
-## 🎨 4. Dashboard Web Embutido
-
-Não tem Home Assistant ainda? Sem problemas.
-1. Habilitamos o `web_server v2` no ESP32.
-2. Abra o arquivo [dashboard.html](dashboard.html) no seu computador.
-3. Insira o IP do seu ESP32 e veja a mágica acontecer com um visual premium.
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE). Sinta-se livre para usar, modificar e contribuir!
-
----
-**Desenvolvido com ❤️ para a comunidade de automação residencial.**
+Este projeto é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
