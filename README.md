@@ -14,30 +14,33 @@ O monitor W218 utiliza um microcontrolador interno (MCU) para a leitura analógi
 | TX | GPIO 21 | Transmissão (ESP -> MCU) |
 | RX | GPIO 20 | Recepção (MCU -> ESP) |
 
-```mermaid
-graph LR
-    MCU[W218 MCU] -- UART RX/TX --> ESP[ESP32-C3]
-    ESP -- ESPHome API --> HA[Home Assistant]
-    ESP -- Native API --> Dash[ESPHome Dashboard]
-```
+## O Caminho para o Handshake Perfeito (Engenharia Reversa)
+
+A maior dificuldade deste projeto foi vencer o "deadlock" de comunicação do W218. Abaixo, detalhamos o que aprendemos durante o processo de tentativa e erro:
+
+### O que falhou (Tentativas Frustradas)
+
+*   **Status WiFi 0x03**: Inicialmente, reportamos o status `0x03` (Conectado ao WiFi), que é o comportamento padrão de muitos módulos Tuya. No entanto, o MCU do W218 ignorava essa mensagem e permanecia em modo de espera, nunca enviando os pacotes de dados (Data Points).
+*   **Versionamento 0x03 no Cabeçalho**: Embora o MCU envie pacotes identificando-se como versão `0x03`, tentar responder utilizando esse mesmo byte de versão no cabeçalho resultava em descarte de pacotes pelo MCU.
+*   **Sincronização Passiva**: Esperar que o MCU solicitasse dados ou iniciasse o handshake provou-se ineficaz, resultando em silêncio absoluto na UART após alguns segundos de boot.
+
+### A Solução (O que funcionou)
+
+Para "desbloquear" o MCU e fazê-lo transmitir os 8 sensores continuamente, implementamos as seguintes lógicas:
+
+1.  **A "Mentira" Necessária (Status 0x04)**: O segredo para destravar o fluxo de dados é reportar o status `0x04` (Conectado à Nuvem). O MCU do W218 só libera os dados se ele acreditar que o módulo de rede tem uma conexão estabelecida com os servidores da Tuya.
+2.  **Cabeçalho Fallback (0x00)**: Descobrimos que, independentemente da versão que o MCU reporta, ele sempre aceita respostas com o byte de versão `0x00`. Esta é a forma mais estável de comunicação para este hardware específico.
+3.  **Heartbeat Proativo**: O ESP32-C3 envia um comando de Heartbeat (`0x00`) a cada 10 segundos. Isso evita que o MCU entre em modo de economia ou reinicie o processo de busca de rede.
+4.  **Sincronização de Tempo (Time Sync)**: O dispositivo exige sincronização de tempo (`CMD 0x24`). Ao responder com a hora correta obtida via SNTP, o MCU estabiliza o envio dos DPs de pH e ORP, que são os mais sensíveis.
 
 ## Otimizações de Firmware e Estabilidade
 
-Diferente de implementações genéricas, este firmware foi otimizado para evitar travamentos de rede comuns em dispositivos ESP32-C3 operando com múltiplos sensores:
+1.  **Gerenciamento de Sockets**: Aumentamos a tabela de sockets do lwIP para 16 (`CONFIG_LWIP_MAX_SOCKETS: 16`). Isso resolve o erro crítico de "Socket Exhaustion" (ENFILE/errno 23) que travava o dispositivo anteriormente.
+2.  **Redução de Carga**: O componente `web_server` foi desativado para priorizar a memória RAM e a estabilidade da API nativa do ESPHome.
+3.  **Latência**: O modo `power_save_mode: none` garante que os handshakes de criptografia sejam processados sem atrasos.
 
-1.  **Gerenciamento de Sockets**: Aumentamos a tabela de sockets do lwIP de 8 para 16 (`CONFIG_LWIP_MAX_SOCKETS: 16`). Isso resolve o erro crítico de "Socket Exhaustion" (ENFILE/errno 23) que ocorre quando o dispositivo gerencia simultaneamente a API, conexões de log e mDNS.
-2.  **Redução de Carga de Rede**: O componente `web_server` foi desativado. Isso economiza memória RAM e sockets TCP, priorizando a estabilidade da conexão nativa da API com o Home Assistant.
-3.  **Ajuste de Latência**: O modo de economia de energia do Wi-Fi foi desativado (`power_save_mode: none`) para garantir handshakes de criptografia Noise rápidos e estáveis.
+## Mapeamento de Data Points (DP IDs)
 
-## Decifração do Protocolo Tuya V3
-
-Para que o MCU do W218 envie os dados, o driver customizado (`tuya_w218.h`) implementa os seguintes requisitos específicos:
-
-*   **Status de Conectividade**: O status reportado ao MCU deve ser obrigatoriamente `0x04` (Cloud Connected). Status `0x03` resulta em silêncio por parte do MCU.
-*   **Versionamento de Cabeçalho**: Embora seja um protocolo v3, as respostas devem utilizar o byte de versão `0x00` para garantir a compatibilidade de recepção pelo MCU original.
-*   **Heartbeat**: Implementado intervalo de 10 segundos para manter o watchdog do MCU ativo.
-
-### Mapeamento de Data Points (DP IDs)
 | Sensor | ID | Multiplicador | Unidade |
 | :--- | :--- | :--- | :--- |
 | pH | 106 | 0.01 | pH |
@@ -47,14 +50,6 @@ Para que o MCU do W218 envie os dados, o driver customizado (`tuya_w218.h`) impl
 | EC | 116 | 0.01 | mS/cm |
 | Salinidade | 121 | 1.0 | ppm |
 | Fator CF | 136 | 0.1 | CF |
-
-## Instalação
-
-1.  Configure suas credenciais no arquivo `secrets.yaml` (utilize o template padrão do ESPHome).
-2.  Compile e faça o upload utilizando o ESPHome:
-    ```bash
-    esphome run lab-piscina.yml
-    ```
 
 ## Licença
 
