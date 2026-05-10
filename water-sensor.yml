@@ -24,7 +24,7 @@ esphome:
           }
 
 bk72xx:
-  board: cb3s
+  board: wb3s
 
 api:
   encryption:
