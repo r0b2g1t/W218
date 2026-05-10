@@ -7,13 +7,13 @@ esphome:
     then:
       - lambda: |-
           static W218Driver* driver = new W218Driver(id(uart_bus));
-          driver->ph_sensor = id(ph_piscina);
-          driver->orp_sensor = id(orp_piscina);
-          driver->temp_sensor = id(temp_agua);
+          driver->ph_sensor = id(ph);
+          driver->orp_sensor = id(orp);
+          driver->temp_sensor = id(temp);
           driver->tds_sensor = id(tds_cond);
-          driver->ec_sensor = id(ec_piscina);
-          driver->salinity_sensor = id(sal_piscina);
-          driver->cf_sensor = id(cf_piscina);
+          driver->ec_sensor = id(ec);
+          driver->salinity_sensor = id(sal);
+          driver->cf_sensor = id(cf);
           driver->time_source = id(sntp_time);
           id(w218_ptr) = (void*) driver;
   on_loop:
